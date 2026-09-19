@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Первый сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">Мой первый сайт</h1>
+    <div class="wrapper">
+        <section class="block counter">
+            <h3 class="counter-title block-title">Счетчик кликов</h3>
+            <div class="counter-container">
+                <p class="counter-count" id="counter-count">0</p>
+                <div class="counter-buttons">
+                    <button class="counter-add" id="counter-add">+</button>
+                    <button class="counter-reset" id="counter-reset">Сброс</button>
+                    <button class="counter-subtract" id="counter-subtract">-</button>
+                </div>        
+            </div>
+        </section>
+        <section class="block cards">
+            <h3 class="cards-title block-title">Карточки товаров</h3>
+            <div class="cards-container">
+                <div class="cards-card card">
+                    <div class="card-image"></div>
+                    <div class="card-info">
+                        <p class="card-name">Название товара</p>
+                        <p class="card-price">Цена</p>
+                        <button class="card-btn" id="card-btn">В корзину</button>
+                    </div>
+                </div>
+                <div class="cards-card card">
+                    <div class="card-image"></div>
+                    <div class="card-info">
+                        <p class="card-name">Название товара</p>
+                        <p class="card-price">Цена</p>
+                        <button class="card-btn" id="card-btn">В корзину</button>
+                    </div>
+                </div>
+                <div class="cards-card card">
+                    <div class="card-image"></div>
+                    <div class="card-info">
+                        <p class="card-name">Название товара</p>
+                        <p class="card-price">Цена</p>
+                        <button class="card-btn" id="card-btn">В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="block todo">
+            <h3 class="todo-title block-title">Список дел</h3>
+            <div class="todo-container">
+                <div class="todo-input input">
+                    <input type="text" class="input-input input-item" id="input" placeholder="Введите задание...">
+                    <button class="input-btn input-item" id="input-btn">Добавить задание</button>
+                </div>
+                <ul class="todo-list list" id="list"></ul>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
