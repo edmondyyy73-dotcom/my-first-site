@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f8fb;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+/* Кнопка "Заказать товар" */
+.order {
+    padding: 0.75em 1.5em;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    background: #151bce;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order:hover {
+    background: #1217a3;
+    transform: scale(1.03);
+}
+
+/* Оверлей */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal.opened {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Контент модалки */
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 480px;
+    padding: 2rem 1.75rem;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+    transform: scale(0.85);
+    transition: transform 0.3s ease;
+}
+
+.modal.opened .modal-content {
+    transform: scale(1);
+}
+
+/* Кнопка закрытия */
+.modal-close {
+    position: absolute;
+    top: 20px;          /* Отступ от верхнего края карточки */
+    right: 20px;        /* Отступ от правого края карточки */
+    width: 32px;        /* Ширина кнопки */
+    height: 32px;       /* Высота кнопки */
+    
+    background: none;   /* Убираем стандартный фон кнопки */
+    border: none;       /* Убираем стандартную рамку */
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: '';
+    position: absolute;
+    width: 24px;        /* Длина палочки */
+    height: 2px;        /* Толщина палочки */
+    background-color: #333; /* Цвет крестика */
+    border-radius: 1px;
+}
+
+/* Поворачиваем первую палочку */
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+/* Поворачиваем вторую палочку */
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+/* Эффект при наведении — кнопка станет чуть четче и немного повернется */
+.modal-close:hover {
+    transform: rotate(90deg);
+    opacity: 0.7;
+}
+
+/* Текст внутри */
+.modal-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #334155;
+}
